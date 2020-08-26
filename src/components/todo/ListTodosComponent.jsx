@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import TodoDataService from '../../api/todo/TodoDataService.js';
-import AuthenticationService from './AuthenticationService.js';
+import AuthenticationService from '../Auth/AuthenticationService.js';
 import moment from 'moment';
 
 class ListTodosComponent extends Component {
-
     constructor(props) {
         super(props)
+        
         this.state = {
             todos: [],
             message: null
@@ -16,8 +16,6 @@ class ListTodosComponent extends Component {
         this.updateTodoHandler = this.updateTodoHandler.bind(this);
         this.refreshTodos = this.refreshTodos.bind(this);
         this.addTodoHandler = this.addTodoHandler.bind(this);
-
-
     }
 
     componentDidMount() {
@@ -56,7 +54,6 @@ class ListTodosComponent extends Component {
     addTodoHandler() {
         this.props.history.push(`/todos/-1`);
     }
-
 
     render() {
         return (

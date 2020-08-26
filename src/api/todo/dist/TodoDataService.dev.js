@@ -27,13 +27,11 @@ function () {
   _createClass(TodoDataService, [{
     key: "retrieveAllTodos",
     value: function retrieveAllTodos(name) {
-      //console.log('executed service');
       return _axios["default"].get("".concat(_Constants.JPA_API_URL, "/users/").concat(name, "/todos"));
     }
   }, {
     key: "retrieveTodo",
     value: function retrieveTodo(name, id) {
-      //console.log('executed service');
       return _axios["default"].get("".concat(_Constants.JPA_API_URL, "/users/").concat(name, "/todos/").concat(id));
     }
   }, {

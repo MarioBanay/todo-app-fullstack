@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import AuthenticationService from './AuthenticationService.js';
 
 class LoginComponent extends Component {
-
     constructor(props) {
         super(props)
 
@@ -45,9 +44,7 @@ class LoginComponent extends Component {
             <div>
                 <h1>Login</h1>
                 <div className="container">
-                    {/* <ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed} /> */}
                     {this.state.hasLoginFailed && <div className="alert alert-warning">Invalid Credentials</div>}
-                    {/* <ShowLoginSuccessMessage showSuccessMessage={this.state.showSuccessMessage} /> */}
                     {this.state.showSuccessMessage && <div>Login Sucessful</div>}
 
                     User Name: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />

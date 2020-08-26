@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import TodoDataService from '../../api/todo/TodoDataService.js';
-import AuthenticationService from './AuthenticationService.js';
+import AuthenticationService from '../Auth/AuthenticationService.js';
 
 class TodoComponent extends Component {
-
     constructor(props) {
         super(props)
 
@@ -17,7 +16,6 @@ class TodoComponent extends Component {
 
         this.onSubmitHandler = this.onSubmitHandler.bind(this);
         this.validate = this.validate.bind(this);
-
     }
 
     componentDidMount() {
@@ -69,7 +67,6 @@ class TodoComponent extends Component {
     }
 
     render() {
-
         let description = this.state.description;
         let targetDate = this.state.targetDate;
 
@@ -86,9 +83,7 @@ class TodoComponent extends Component {
                         validateOnChange={false}
                         validateOnBlur={false}
                         validate={this.validate}
-                        enableReinitialize={true}
-
-                    >
+                        enableReinitialize={true} >
                         {
                             (props) => (
                                 <Form>
