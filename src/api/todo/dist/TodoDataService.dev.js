@@ -32,7 +32,11 @@ function () {
   }, {
     key: "retrieveTodo",
     value: function retrieveTodo(name, id) {
-      return _axios["default"].get("".concat(_Constants.JPA_API_URL, "/users/").concat(name, "/todos/").concat(id));
+      console.log('retrieving: ' + name + ' ' + id);
+
+      if (id !== -1) {
+        return _axios["default"].get("".concat(_Constants.JPA_API_URL, "/users/").concat(name, "/todos/").concat(id));
+      }
     }
   }, {
     key: "deleteTodo",

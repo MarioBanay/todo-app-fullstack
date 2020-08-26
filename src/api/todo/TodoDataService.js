@@ -7,7 +7,11 @@ class TodoDataService {
     }
 
     retrieveTodo(name, id) {
-        return axios.get(`${JPA_API_URL}/users/${name}/todos/${id}`);
+        console.log('retrieving: ' + name + ' ' + id)
+        if ((id !== -1)) {
+            return axios.get(`${JPA_API_URL}/users/${name}/todos/${id}`);
+        }
+        
     }
 
     deleteTodo(name, id) {
